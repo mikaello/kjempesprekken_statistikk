@@ -185,6 +185,7 @@ class Overview {
             competitors.add(c);
         }
 
+	thirdFooterColumn++;
         return c;
     }
 
