@@ -258,16 +258,26 @@ class Competitor implements Comparable<Competitor> {
     public int increaseCount() { return ++count; }
 
     public int compareTo(Competitor c) {
-        int bestCount = c.count - count;
+        int bestCount = c.getCount() - getCount();
         if (bestCount == 0) {
-            return name.compareTo(c.name);
+            return getName().compareTo(c.getName());
         }
 
         return bestCount;
     }
 
+    public boolean equals(Object other) {
+        boolean result = false;
+        if (other instanceof Competitor) {
+            Competitor that = (Competitor) other;
+            result = (this.getName() == that.getName() &&
+		      this.getCount() == that.getCount());
+        }
+        return result;
+    }
+
     public String toString() {
-        return String.format("%3d %s", count, name);
+        return String.format("%3d %s", getCount(), getName());
     }
 
     /**
@@ -276,6 +286,6 @@ class Competitor implements Comparable<Competitor> {
      * then this method can be used.
      */
     public String[] toStringArray() {
-        return new String[] {"", name, count+""};
+        return new String[] {"", getName(), getCount()+""};
     }
 }
