@@ -116,7 +116,8 @@ class Overview {
 
         System.out.println("\n\nPossible commands:");
         System.out.println("To add new name:      <name>      (just write the name and ENTER, no special command)");
-        System.out.println("To undo last add:     undo");
+	//        System.out.println("To undo last add:     undo");
+	System.out.println("To list all names:    list");
         System.out.println("To quit and save:     exit");
         System.out.println("To quit and not save: exit hard");
         System.out.println();
@@ -131,6 +132,9 @@ class Overview {
 
             } else if (lastNameProvided.equalsIgnoreCase("undo")) {
                 System.err.println("Not supported yet");
+
+	    } else if (lastNameProvided.equalsIgnoreCase("list")) {
+		listAllNames();
 
             } else {
                 Competitor added = addNewName(lastNameProvided);
@@ -221,6 +225,13 @@ class Overview {
         }
 
         return competitorList;
+    }
+
+    public void listAllNames() {
+	for (Competitor c : competitors) {
+	    System.out.println(c);
+	}
+	System.out.println();
     }
 
 }
