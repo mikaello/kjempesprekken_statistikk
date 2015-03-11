@@ -1,0 +1,26 @@
+## File:   .gitignore
+## Date:   2015/03/11 13:24:24
+
+# Java specific
+*.class
+*.jar
+
+
+# Netbeans ignore personal stuff
+nbproject/private/
+
+
+# Generic files to ignore
+*.lock
+*.DS_Store
+*.swp
+# Emacs files
+*~
+\#*\#
+auto-save-list
+tramp
+.\#*
+
+
+*.csv
+com/
