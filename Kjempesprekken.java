@@ -12,6 +12,8 @@ import com.opencsv.CSVWriter;
  */
 public class Kjempesprekken {
     public static void main(String[] args) throws Exception {
+	String inCSV, outCSV = "";
+
 	if (args.length == 2) {
 	    inCSV = args[0];
 	    outCSV = args[1];
