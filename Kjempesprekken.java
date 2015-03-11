@@ -21,9 +21,9 @@ public class Kjempesprekken {
 }
 
 class Overview {
-    public final static String firstColumn = "";
-    public final static String secondColumn = "Navn";
-    public final static String thirdColumn = "Deltakelser";
+    public final static String firstHeaderColumn = "";
+    public final static String secondHeaderColumn = "Navn";
+    public final static String thirdHeaderColumn = "Deltakelser";
     public final static String firstFooterColumn = "";
     public final static String secondFooterColumn = "Totalt antall deltakelser:";
     public final static String separator = ";";
@@ -31,15 +31,21 @@ class Overview {
     private int thirdFooterColumn;
     private TreeSet<Competitor> competitors = new TreeSet<Competitor>();
 
+    /**
+     * Read competitors from a CSV-file to a TreeSet<Competitor>. Also
+     * updates the thirdFooterColumn to the number given in the footer
+     * of the CSV-file.
+     * @param filename name of the CSV-file to be read
+     */
     public void readCompetitors(String filename) throws Exception {
 	CSVReader reader = new CSVReader(new FileReader(filename), ';');
 
 	List<String[]> myEntries = reader.readAll();
 
 	for (String[] s : myEntries) {
-	    if (s[0].equalsIgnoreCase(firstColumn) &&
-		s[1].equalsIgnoreCase(secondColumn) &&
-		s[2].equalsIgnoreCase(thirdColumn)) {
+	    if (s[0].equalsIgnoreCase(firstHeaderColumn) &&
+		s[1].equalsIgnoreCase(secondHeaderColumn) &&
+		s[2].equalsIgnoreCase(thirdHeaderColumn)) {
 		// Catch header
 		System.out.println("Starting reading .csv-file...");
 	    } else if (s[0].equalsIgnoreCase(firstFooterColumn) &&
@@ -58,10 +64,16 @@ class Overview {
 	}
     }
 
+    /**
+     * Prints out all entries from the TreeSet containing all the
+     * competitors and their stats to a CSV-file with the filename
+     * given. Makes header and footer in the CSV-file.
+     * @param filename name of the CSV-file that is made
+     */
     public void printCompetitors(String filename) throws Exception {
 	CSVWriter writer = new CSVWriter(new FileWriter(filename), ';');
 
-	writer.writeNext(new String[]{firstColumn, secondColumn, thirdColumn});
+	writer.writeNext(new String[]{firstHeaderColumn, secondHeaderColumn, thirdHeaderColumn});
 
 	int currentCount = 1;
 	for (Competitor c : competitors) {
