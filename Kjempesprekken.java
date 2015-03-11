@@ -160,7 +160,11 @@ class Overview {
         Competitor c = getCompetitor(name);
 
         if (c != null) {
+	    // Have to remove-update-add to make the TreeSet sorted
+	    competitors.remove(c);
             c.increaseCount();
+	    competitors.add(c);
+
         } else {
             List<Competitor> l = getSimilarCompetitor(name);
 
@@ -185,7 +189,7 @@ class Overview {
             competitors.add(c);
         }
 
-	thirdFooterColumn++;
+	thirdFooterColumn++; // Total number of participations
         return c;
     }
 
