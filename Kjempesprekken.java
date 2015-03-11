@@ -13,21 +13,21 @@ import com.opencsv.CSVWriter;
  */
 public class Kjempesprekken {
     public static void main(String[] args) throws Exception {
-	String inCSV, outCSV = "";
+        String inCSV, outCSV = "";
 
-	if (args.length == 2) {
-	    inCSV = args[0];
-	    outCSV = args[1];
-	} else {
-	    System.err.println("Run the program like this:");
-	    System.err.println("   java Kjempesprekken <inCSV> <outCSV>");
-	    return;
-	}
+        if (args.length == 2) {
+            inCSV = args[0];
+            outCSV = args[1];
+        } else {
+            System.err.println("Run the program like this:");
+            System.err.println("   java Kjempesprekken <inCSV> <outCSV>");
+            return;
+        }
 
-	Overview o = new Overview();
-	o.readCompetitors(inCSV);
-	o.shell();
-	o.printCompetitors(outCSV);
+        Overview o = new Overview();
+        o.readCompetitors(inCSV);
+        o.shell();
+        o.printCompetitors(outCSV);
     }
 
 }
@@ -50,32 +50,32 @@ class Overview {
      * @param filename name of the CSV-file to be read
      */
     public void readCompetitors(String filename) throws Exception {
-	CSVReader reader = new CSVReader(new FileReader(filename), ';');
+        CSVReader reader = new CSVReader(new FileReader(filename), ';');
 
-	List<String[]> myEntries = reader.readAll();
+        List<String[]> myEntries = reader.readAll();
 
-	for (String[] s : myEntries) {
-	    if (s[0].equalsIgnoreCase(firstHeaderColumn) &&
-		s[1].equalsIgnoreCase(secondHeaderColumn) &&
-		s[2].equalsIgnoreCase(thirdHeaderColumn)) {
-		// Catch header
-		System.out.println("Starting reading .csv-file...");
+        for (String[] s : myEntries) {
+            if (s[0].equalsIgnoreCase(firstHeaderColumn) &&
+                s[1].equalsIgnoreCase(secondHeaderColumn) &&
+                s[2].equalsIgnoreCase(thirdHeaderColumn)) {
+                // Catch header
+                System.out.println("Starting reading .csv-file...");
 
-	    } else if (s[0].equalsIgnoreCase(firstFooterColumn) &&
-		s[1].equalsIgnoreCase(secondFooterColumn)) {
-		// Catch footer
-		thirdFooterColumn = Integer.parseInt(s[2]);
-		System.out.printf("Finished reading .csv-file...     (%d entries)\n", competitors.size());
+            } else if (s[0].equalsIgnoreCase(firstFooterColumn) &&
+                       s[1].equalsIgnoreCase(secondFooterColumn)) {
+                // Catch footer
+                thirdFooterColumn = Integer.parseInt(s[2]);
+                System.out.printf("Finished reading .csv-file...     (%d entries)\n", competitors.size());
 
-	    } else {
-		// Or catch competitor
-		competitors.add(new Competitor(s[1], Integer.parseInt(s[2])));
-	    }
-	}
+            } else {
+                // Or catch competitor
+                competitors.add(new Competitor(s[1], Integer.parseInt(s[2])));
+            }
+        }
 
-	for (Competitor c : competitors) {
-	    //System.out.println(c);
-	}
+        for (Competitor c : competitors) {
+            //System.out.println(c);
+        }
     }
 
     /**
@@ -85,56 +85,62 @@ class Overview {
      * @param filename name of the CSV-file that is made
      */
     public void printCompetitors(String filename) throws Exception {
-	CSVWriter writer = new CSVWriter(new FileWriter(filename), ';');
+        CSVWriter writer = new CSVWriter(new FileWriter(filename), ';');
 
-	// Add header
-	writer.writeNext(new String[]{firstHeaderColumn, secondHeaderColumn, thirdHeaderColumn});
+        // Add header
+        writer.writeNext(new String[]{firstHeaderColumn, secondHeaderColumn, thirdHeaderColumn});
 
-	int currentCount = 1;
-	for (Competitor c : competitors) {
-	    // Get right position number of the competitor
-	    String[] cur = c.toStringArray();
-	    cur[0] = "" + currentCount;
+        int currentCount = 1;
+        for (Competitor c : competitors) {
+            // Get right position number of the competitor
+            String[] cur = c.toStringArray();
+            cur[0] = "" + currentCount;
 
-	    // Store all three fields (position, name, stat) to CSV-file
-	    writer.writeNext(cur);
+            // Store all three fields (position, name, stat) to CSV-file
+            writer.writeNext(cur);
 
-	    // Update position
-	    currentCount++;
-	}
+            // Update position
+            currentCount++;
+        }
 
-	// Add footer
-	writer.writeNext(new String[]{firstFooterColumn, secondFooterColumn, thirdFooterColumn + ""});
-	writer.close();
+        // Add footer
+        writer.writeNext(new String[]{firstFooterColumn, secondFooterColumn, thirdFooterColumn + ""});
+        writer.close();
 
-	System.out.printf("Finished printing %s-file... (%d entries)\n", filename, currentCount-1);
+        System.out.printf("Finished printing %s-file... (%d entries)\n", filename, currentCount-1);
     }
 
     public void shell() {
-	String lastNameProvided = "";
-	Scanner scan = new Scanner(System.in);
+        String lastNameProvided = "";
+        Scanner scan = new Scanner(System.in);
 
-	System.out.println("\n\nPossible commands:");
-	System.out.println("To add new name:  <name>      (just write the name and ENTER, no special command)");
-	System.out.println("To undo last add: undo");
-	System.out.println("To quit and save: exit");
-	System.out.println();
+        System.out.println("\n\nPossible commands:");
+        System.out.println("To add new name:      <name>      (just write the name and ENTER, no special command)");
+        System.out.println("To undo last add:     undo");
+        System.out.println("To quit and save:     exit");
+        System.out.println("To quit and not save: exit hard");
+        System.out.println();
 
-	while(true) {
-	    System.out.print("Name: " );
-	    lastNameProvided = scan.nextLine();
+        while(true) {
+            System.out.print("Name: " );
+            lastNameProvided = scan.nextLine();
 
-	    if (lastNameProvided.equalsIgnoreCase("exit")) {
-		System.out.println();
-		break;
+            if (lastNameProvided.equalsIgnoreCase("exit")) {
+                System.out.println();
+                break;
 
-	    } else if (lastNameProvided.equalsIgnoreCase("undo")) {
-		System.err.println("Not supported yet");
+            } else if (lastNameProvided.equalsIgnoreCase("undo")) {
+                System.err.println("Not supported yet");
 
-	    } else {
-		System.out.println("Added");
-	    }
-	}
+            } else {
+                Competitor added = addNewName(lastNameProvided);
+		if (added == null) {
+		    continue;
+		} else {
+		    System.out.println(added + "\n");
+		}
+            }
+        }
     }
 
     /**
@@ -142,14 +148,36 @@ class Overview {
      * competitors, or it will increase the count of a competitor
      * already in the list.
      */
-    public void addNewName(String name) {
-	Competitor c = getCompetitor(name);
+    public Competitor addNewName(String name) {
+        Competitor c = getCompetitor(name);
 
-	if (c != null) {
-	    c.increaseCount();
-	} else {
-	    competitors.add(new Competitor(name));
-	}
+        if (c != null) {
+            c.increaseCount();
+        } else {
+            List<Competitor> l = getSimilarCompetitor(name);
+
+            if (l.size() != 0) {
+		// Check for similar competitors, and let user decide
+                Scanner scan = new Scanner(System.in);
+
+                System.out.println("Could not find " + name + ", but found similar: ");
+
+                for (Competitor com : l) {
+                    System.out.println(com);
+                }
+
+		System.out.println("\nIs any of these the correct? y / n: ");
+		if (scan.nextLine().equalsIgnoreCase("y")) {
+		    // Return null, and let user type new name
+		    return null;
+		}
+            }
+
+            c = new Competitor(name);
+            competitors.add(c);
+        }
+
+        return c;
     }
 
     /**
@@ -159,13 +187,13 @@ class Overview {
      * @return the matching competitor-object, or null if not found
      */
     public Competitor getCompetitor(String name) {
-	for (Competitor c : competitors) {
-	    if (c.getName().equalsIgnoreCase(name)) {
-		return c;
-	    }
-	}
+        for (Competitor c : competitors) {
+            if (c.getName().equalsIgnoreCase(name)) {
+                return c;
+            }
+        }
 
-	return null;
+        return null;
     }
 
     /**
@@ -173,22 +201,26 @@ class Overview {
      * competitors, that partially matches the given name.
      */
     public List<Competitor> getSimilarCompetitor(String name) {
-	String[] names = name.toLowerCase().split("\\s[-]");
-	List<Competitor> competitorList = new ArrayList<Competitor>();
-
-	for (Competitor c : competitors) {
-	    String cName = c.getName().toLowerCase();
-
-	    // Check all subnames of the name
-	    for (String s : names) {
-		if (cName.contains(s)) {
-		    competitorList.add(c);
-		    break;
-		}
-	    }
+        String[] names = name.toLowerCase().split("([-]|\\s)+");
+	for (String s: names) {
+	    System.out.println(s);
 	}
 
-	return competitorList;
+	List<Competitor> competitorList = new ArrayList<Competitor>();
+
+        for (Competitor c : competitors) {
+            String cName = c.getName().toLowerCase();
+
+            // Check all subnames of the name
+            for (String s : names) {
+                if (cName.contains(s)) {
+                    competitorList.add(c);
+                    break;
+                }
+            }
+        }
+
+        return competitorList;
     }
 
 }
@@ -202,12 +234,12 @@ class Competitor implements Comparable<Competitor> {
     private int count;
 
     Competitor(String name) {
-	this(name, 1);
+        this(name, 1);
     }
 
     Competitor(String name, int count) {
-	this.name = name;
-	this.count = count;
+        this.name = name;
+        this.count = count;
     }
 
     public int getCount() { return count; }
@@ -215,16 +247,16 @@ class Competitor implements Comparable<Competitor> {
     public int increaseCount() { return ++count; }
 
     public int compareTo(Competitor c) {
-	int bestCount = c.count - count;
-	if (bestCount == 0) {
-	    return name.compareTo(c.name);
-	}
+        int bestCount = c.count - count;
+        if (bestCount == 0) {
+            return name.compareTo(c.name);
+        }
 
-	return bestCount;
+        return bestCount;
     }
 
     public String toString() {
-	return String.format("%3d %s", count, name);
+        return String.format("%3d %s", count, name);
     }
 
     /**
@@ -233,6 +265,6 @@ class Competitor implements Comparable<Competitor> {
      * then this method can be used.
      */
     public String[] toStringArray() {
-	return new String[] {"", name, count+""};
+        return new String[] {"", name, count+""};
     }
 }
