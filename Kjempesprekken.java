@@ -173,7 +173,7 @@ class Overview {
      * competitors, that partially matches the given name.
      */
     public List<Competitor> getSimilarCompetitor(String name) {
-	String[] names = name.toLowerCase().split("\s[-]");
+	String[] names = name.toLowerCase().split("\\s[-]");
 	List<Competitor> competitorList = new ArrayList<Competitor>();
 
 	for (Competitor c : competitors) {
@@ -186,6 +186,9 @@ class Overview {
 		    break;
 		}
 	    }
+	}
+
+	return competitorList;
     }
 
 }
