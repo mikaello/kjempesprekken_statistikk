@@ -110,11 +110,61 @@ class Overview {
     }
 
     public void shell() {
-	System.out.println("shell");
+	String lastNameProvided = "";
+	Scanner scan = new Scanner(System.in);
 
-	// while(true) {
-	//     System.out.print ("Command: ");
-	// }
+	System.out.println("\n\nPossible commands:");
+	System.out.println("To add new name:  <name>      (just write the name and ENTER, no special command)");
+	System.out.println("To undo last add: undo");
+	System.out.println("To quit and save: exit");
+	System.out.println();
+
+	while(true) {
+	    System.out.print("Name: " );
+	    lastNameProvided = scan.nextLine();
+
+	    if (lastNameProvided.equalsIgnoreCase("exit")) {
+		System.out.println();
+		break;
+
+	    } else if (lastNameProvided.equalsIgnoreCase("undo")) {
+		System.err.println("Not supported yet");
+
+	    } else {
+		System.out.println("Added");
+	    }
+	}
+    }
+
+    /**
+     * Either adds a new name to the TreeSet containing all the
+     * competitors, or it will increase the count of a competitor
+     * already in the list.
+     */
+    public void addNewName(String name) {
+	Competitor c = getCompetitor(name);
+
+	if (c != null) {
+	    c.increaseCount();
+	} else {
+	    competitors.add(new Competitor(name));
+	}
+    }
+
+    /**
+     * Get an competitor from the TreeSet matching the name.
+     *
+     * @param name name of the competitor to be fetched
+     * @return the matching competitor-object, or null if not found
+     */
+    public Competitor getCompetitor(String name) {
+	for (Competitor c : competitors) {
+	    if (c.getName().equalsIgnoreCase(name)) {
+		return c;
+	    }
+	}
+
+	return null;
     }
 
 }
@@ -127,12 +177,17 @@ class Competitor implements Comparable<Competitor> {
     private final String name;
     private int count;
 
+    Competitor(String name) {
+	this(name, 1);
+    }
+
     Competitor(String name, int count) {
 	this.name = name;
 	this.count = count;
     }
 
     public int getCount() { return count; }
+    public String getName() { return name; }
     public int increaseCount() { return ++count; }
 
     public int compareTo(Competitor c) {
