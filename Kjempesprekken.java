@@ -211,9 +211,6 @@ class Overview {
      */
     public List<Competitor> getSimilarCompetitor(String name) {
         String[] names = name.toLowerCase().split("([-]|\\s)+");
-	for (String s: names) {
-	    System.out.println(s);
-	}
 
 	List<Competitor> competitorList = new ArrayList<Competitor>();
 
