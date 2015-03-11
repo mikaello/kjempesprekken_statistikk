@@ -9,7 +9,11 @@ import com.opencsv.CSVWriter;
 
 /**
  * Created 2015/03/11 09:31:11
- * @author mikaello@student.matnat.uio.no
+ *
+ * How to transfer CSV to HTML and back:
+ *  http://www.convertcsv.com/html-table-to-csv.htm
+ *
+ * @author mikaello
  */
 public class Kjempesprekken {
     public static void main(String[] args) throws Exception {
