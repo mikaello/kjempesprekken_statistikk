@@ -12,10 +12,19 @@ import com.opencsv.CSVWriter;
  */
 public class Kjempesprekken {
     public static void main(String[] args) throws Exception {
+	if (args.length == 2) {
+	    inCSV = args[0];
+	    outCSV = args[1];
+	} else {
+	    System.err.println("Run the program like this:");
+	    System.err.println("   java Kjempesprekken <inCSV> <outCSV>");
+	    return;
+	}
+
 	Overview o = new Overview();
-	o.readCompetitors("kjempesprekken.csv");
+	o.readCompetitors(inCSV);
 	o.shell();
-	o.printCompetitors("hei.csv");
+	o.printCompetitors(outCSV);
     }
 
 }
