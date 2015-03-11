@@ -48,11 +48,13 @@ class Overview {
 		s[2].equalsIgnoreCase(thirdHeaderColumn)) {
 		// Catch header
 		System.out.println("Starting reading .csv-file...");
+
 	    } else if (s[0].equalsIgnoreCase(firstFooterColumn) &&
 		s[1].equalsIgnoreCase(secondFooterColumn)) {
 		// Catch footer
 		thirdFooterColumn = Integer.parseInt(s[2]);
 		System.out.printf("Finished reading .csv-file...     (%d entries)\n", competitors.size());
+
 	    } else {
 		// Or catch competitor
 		competitors.add(new Competitor(s[1], Integer.parseInt(s[2])));
@@ -73,23 +75,27 @@ class Overview {
     public void printCompetitors(String filename) throws Exception {
 	CSVWriter writer = new CSVWriter(new FileWriter(filename), ';');
 
+	// Add header
 	writer.writeNext(new String[]{firstHeaderColumn, secondHeaderColumn, thirdHeaderColumn});
 
 	int currentCount = 1;
 	for (Competitor c : competitors) {
+	    // Get right position number of the competitor
 	    String[] cur = c.toStringArray();
 	    cur[0] = "" + currentCount;
 
+	    // Store all three fields (position, name, stat) to CSV-file
 	    writer.writeNext(cur);
 
+	    // Update position
 	    currentCount++;
 	}
 
+	// Add footer
 	writer.writeNext(new String[]{firstFooterColumn, secondFooterColumn, thirdFooterColumn + ""});
+	writer.close();
 
-	 writer.close();
-
-	 System.out.printf("Finished printing %s-file... (%d entries)\n", filename, currentCount-1);
+	System.out.printf("Finished printing %s-file... (%d entries)\n", filename, currentCount-1);
     }
 
     public void shell() {
@@ -102,6 +108,10 @@ class Overview {
 
 }
 
+/**
+ * Every person with the correct stats are stored as objects of this
+ * class.
+ */
 class Competitor implements Comparable<Competitor> {
     private final String name;
     private int count;
@@ -127,6 +137,11 @@ class Competitor implements Comparable<Competitor> {
 	return String.format("%3d %s", count, name);
     }
 
+    /**
+     * Makes a string array with all the fields of an competitor. When
+     * printing to a CSV-file it is necessary to give a string-array,
+     * then this method can be used.
+     */
     public String[] toStringArray() {
 	return new String[] {"", name, count+""};
     }
