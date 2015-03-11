@@ -1,5 +1,6 @@
 import java.util.TreeSet;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -165,6 +166,26 @@ class Overview {
 	}
 
 	return null;
+    }
+
+    /**
+     * Returns competitors in the TreeSet containing all the
+     * competitors, that partially matches the given name.
+     */
+    public List<Competitor> getSimilarCompetitor(String name) {
+	String[] names = name.toLowerCase().split("\s[-]");
+	List<Competitor> competitorList = new ArrayList<Competitor>();
+
+	for (Competitor c : competitors) {
+	    String cName = c.getName().toLowerCase();
+
+	    // Check all subnames of the name
+	    for (String s : names) {
+		if (cName.contains(s)) {
+		    competitorList.add(c);
+		    break;
+		}
+	    }
     }
 
 }
