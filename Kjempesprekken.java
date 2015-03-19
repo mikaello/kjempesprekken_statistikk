@@ -1,6 +1,8 @@
 import java.util.TreeSet;
 import java.util.List;
+import java.util.Set;
 import java.util.ArrayList;
+import java.util.Stack;
 import java.util.Scanner;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -44,8 +46,16 @@ class Overview {
     public final static String secondFooterColumn = "Totalt antall deltakelser:";
     public final static char separator = ',';
 
+    private static final String UNDO = "!undo";
+    private static final String LIST_ALL = "!list";
+    private static final String LIST_PREFIX = "!list";
+    private static final String LIST_COMMANDS = "!help";
+    private static final String EXIT_SAVE = "!exit";
+    private static final String EXIT_DISCARD = "!exit hard";
+
     private int thirdFooterColumn;
-    private TreeSet<Competitor> competitors = new TreeSet<Competitor>();
+    private Set<Competitor> competitors = new TreeSet<Competitor>();
+    private Stack<Competitor> namesAdded = new Stack<Competitor>();
 
     /**
      * Read competitors from a CSV-file to a TreeSet<Competitor>. Also
@@ -104,6 +114,10 @@ class Overview {
 
         int currentCount = 1;
         for (Competitor c : competitors) {
+	    if (c.getCount() < 1) {
+		continue;
+	    }
+
             // Get right position number of the competitor
             String[] cur = c.toStringArray();
             cur[0] = "" + currentCount;
@@ -125,38 +139,89 @@ class Overview {
     public void shell() {
         String lastNameProvided = "";
         Scanner scan = new Scanner(System.in);
+	boolean queryUser = true;
 
-        System.out.println("\n\nPossible commands:");
-        System.out.println("To add new name:      <name>      (just write the name and ENTER, no special command)");
-	//        System.out.println("To undo last add:     undo");
-	System.out.println("To list all names:    list");
-        System.out.println("To quit and save:     exit");
-        System.out.println("To quit and not save: exit hard");
-        System.out.println();
-
-        while(true) {
+	printCommands();
+        do {
             System.out.print("Name: " );
-            lastNameProvided = scan.nextLine();
+            lastNameProvided = scan.nextLine().trim();
 
-            if (lastNameProvided.equalsIgnoreCase("exit")) {
-                System.out.println();
-                break;
-
-            } else if (lastNameProvided.equalsIgnoreCase("undo")) {
-                System.err.println("Not supported yet");
-
-	    } else if (lastNameProvided.equalsIgnoreCase("list")) {
-		listAllNames();
-
+	    if (lastNameProvided.length() == 0) {
+		continue;
+	    } else if (lastNameProvided.charAt(0) == '!') {
+		queryUser = handleCommand(lastNameProvided);
             } else {
+		if ((lastNameProvided.split("\\s").length == 1)) {
+		    System.out.print("Name consisting of only one word, is it correct [y/n]: ");
+		    String answer = scan.nextLine();
+
+		    if (answer.charAt(0) == 'n') {
+			continue;
+		    }
+		}
+
                 Competitor added = addNewName(lastNameProvided);
 		if (added == null) {
 		    continue;
 		} else {
+		    namesAdded.push(added);
 		    System.out.println(added + "\n");
 		}
             }
-        }
+        } while(queryUser);
+    }
+
+    private boolean handleCommand(String command) {
+            if (command.equalsIgnoreCase(EXIT_SAVE)) {
+                System.out.println();
+                return false;
+	    } else if (command.equalsIgnoreCase(EXIT_DISCARD)) {
+		// Exit without saving
+		System.exit(0);
+            } else if (command.equalsIgnoreCase(UNDO)) {
+		undoLastAdd();
+	    } else if (command.equalsIgnoreCase(LIST_ALL)) {
+		listAllNames();
+	    } else if (command.equalsIgnoreCase(LIST_PREFIX)) {
+
+	    } else if (command.equalsIgnoreCase(LIST_COMMANDS)) {
+		printCommands();
+	    }
+
+	    return true;
+    }
+
+    private void printCommands() {
+        System.out.println("\n\nPossible commands:");
+        System.out.println("To add new name:               <name>      " +
+			   "(just write the name and ENTER, no special command)");
+	System.out.printf("To undo last add:              %s\n", UNDO);
+	System.out.printf("To list all names:             %s\n", LIST_ALL);
+	System.out.printf("To list all names with prefix: %s <name>", LIST_PREFIX);
+	System.out.printf("To print this list:            %s\n", LIST_COMMANDS);
+        System.out.printf("To quit and save:              %s\n", EXIT_SAVE);
+        System.out.printf("To quit and not save:          %s\n", EXIT_DISCARD);
+        System.out.println();
+    }
+
+    public boolean undoLastAdd() {
+	if (namesAdded.isEmpty()) {
+	    System.err.println("Nothing to undo\n");
+	    return false;
+	}
+
+	Competitor lastAdded = namesAdded.pop();
+	int currentCount = decreaseCompetitorCount(lastAdded);
+
+	if (currentCount < 0) {
+	    System.err.printf("Something went wrong, '%s' have a negative participation count: %d\n\n",
+			      lastAdded.getName(), currentCount);
+	    return false;
+	}
+
+	System.out.printf("The addition of '%s' is removed, current stat is now:\n", lastAdded.getName());
+	System.out.println(lastAdded + "\n");
+	return true;
     }
 
     /**
@@ -169,9 +234,7 @@ class Overview {
 
         if (c != null) {
 	    // Have to remove-update-add to make the TreeSet sorted
-	    competitors.remove(c);
-            c.increaseCount();
-	    competitors.add(c);
+	    increaseCompetitorCount(c);
 
         } else {
             List<Competitor> l = getSimilarCompetitor(name);
@@ -248,6 +311,22 @@ class Overview {
 	System.out.println();
     }
 
+    public int increaseCompetitorCount(Competitor c) {
+	    competitors.remove(c);
+            int currentCount = c.increaseCount();
+	    competitors.add(c);
+
+	    return currentCount;
+    }
+
+    public int decreaseCompetitorCount(Competitor c) {
+	    competitors.remove(c);
+            int currentCount = c.decreaseCount();
+	    competitors.add(c);
+
+	    return currentCount;
+    }
+
 }
 
 /**
@@ -270,6 +349,7 @@ class Competitor implements Comparable<Competitor> {
     public int getCount() { return count; }
     public String getName() { return name; }
     public int increaseCount() { return ++count; }
+    public int decreaseCount() { return --count; }
 
     public int compareTo(Competitor c) {
         int bestCount = c.getCount() - getCount();
