@@ -304,6 +304,9 @@ class Overview {
         return competitorList;
     }
 
+    /**
+     * List all competitors with participation count
+     */
     public void listAllNames() {
 	for (Competitor c : competitors) {
 	    System.out.println(c);
@@ -311,6 +314,11 @@ class Overview {
 	System.out.println();
     }
 
+    /**
+     * Wrapper for Competitor.increaseCount(). Necessary for the TreeSet to be sorted.
+     * @param c the competitor for which the count should be increased
+     * @return current count
+     */
     public int increaseCompetitorCount(Competitor c) {
 	    competitors.remove(c);
             int currentCount = c.increaseCount();
@@ -319,6 +327,11 @@ class Overview {
 	    return currentCount;
     }
 
+    /**
+     * Wrapper for Competitor.decreaseCount(). Necessary for the TreeSet to be sorted.
+     * @param c the competitor for which the count should be decreased
+     * @return current count
+     */
     public int decreaseCompetitorCount(Competitor c) {
 	    competitors.remove(c);
             int currentCount = c.decreaseCount();
@@ -348,7 +361,11 @@ class Competitor implements Comparable<Competitor> {
 
     public int getCount() { return count; }
     public String getName() { return name; }
+
+    /** Do not call this method directly, use Kjempesprekken.increaseCompetitorCount() */
     public int increaseCount() { return ++count; }
+
+    /** Do not call this method directly, use Kjempesprekken.decreaseCompetitorCount() */
     public int decreaseCount() { return --count; }
 
     public int compareTo(Competitor c) {
