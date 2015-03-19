@@ -58,6 +58,14 @@ class Overview {
 
         List<String[]> myEntries = reader.readAll();
 
+	if (myEntries.isEmpty()) {
+	    System.err.println("ERROR: No entries is found, check file");
+	    System.exit(1);
+	} else if (myEntries.get(0).length == 1) {
+	    System.err.println("ERROR: Only one element per line, check separator (use " + separator + ")");
+	    System.exit(1);
+	}
+
         for (String[] s : myEntries) {
             if (s[0].equalsIgnoreCase(firstHeaderColumn) &&
                 s[1].equalsIgnoreCase(secondHeaderColumn) &&
