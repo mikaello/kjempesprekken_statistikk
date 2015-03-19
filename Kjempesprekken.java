@@ -42,7 +42,7 @@ class Overview {
     public final static String thirdHeaderColumn = "Deltakelser";
     public final static String firstFooterColumn = "";
     public final static String secondFooterColumn = "Totalt antall deltakelser:";
-    public final static String separator = ";";
+    public final static char separator = ',';
 
     private int thirdFooterColumn;
     private TreeSet<Competitor> competitors = new TreeSet<Competitor>();
@@ -54,7 +54,7 @@ class Overview {
      * @param filename name of the CSV-file to be read
      */
     public void readCompetitors(String filename) throws Exception {
-        CSVReader reader = new CSVReader(new FileReader(filename), ';');
+        CSVReader reader = new CSVReader(new FileReader(filename), separator);
 
         List<String[]> myEntries = reader.readAll();
 
