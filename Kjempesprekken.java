@@ -214,13 +214,18 @@ class Overview {
 	int currentCount = decreaseCompetitorCount(lastAdded);
 
 	if (currentCount < 0) {
-	    System.err.printf("Something went wrong, '%s' have a negative participation count: %d\n\n",
+	    System.err.printf("Something went wrong, '%s' has a negative participation count: %d\n\n",
 			      lastAdded.getName(), currentCount);
 	    return false;
+	} else if (currentCount == 0) {
+	    // Remove newly added competitors when doing an 'undo'
+	    competitors.remove(lastAdded);
+	    System.out.printf("The competitor '%s' is removed from the list\n\n", lastAdded.getName());
+	} else {
+	    System.out.printf("The last added participation of '%s' is removed, current stat is now:\n",
+			      lastAdded.getName());
+	    System.out.println(lastAdded + "\n");
 	}
-
-	System.out.printf("The addition of '%s' is removed, current stat is now:\n", lastAdded.getName());
-	System.out.println(lastAdded + "\n");
 	return true;
     }
 
