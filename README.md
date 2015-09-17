@@ -8,9 +8,11 @@ Lagre openCSV i samme mappe som kjempesprekken_statistkk og pakk ut jar fila (ja
 
 CSV-fila må være på følgende format (der tekst må skrives slik det er skrevet under):
 
+```
 ,Navn,Deltakelser
 <any>,<string>,<int>
 <any>,<string>,<int>
 ...
 <any>,<string>,<int>
 ,Totalt antall deltakelser,<int>
+```
