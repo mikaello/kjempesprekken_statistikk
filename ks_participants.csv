@@ -1,0 +1,928 @@
+,Navn,Deltakelser
+1,Bjørn Hem,37
+2,Bjørn Hauge,22
+3,Gudmund Gaupset,22
+4,Steinar Myrabø,21
+5,Terje Stensberg,20
+6,Geir Taugbøl,18
+7,Jon Tolgensbakk,17
+8,Magne Vollen,16
+9,Eldar Frøland,14
+10,Asle Mo,13
+11,Jan Erik Haugen,13
+12,Knut Hangeraas,13
+13,Knut Ola Aamodt,13
+14,Knut Stabell,13
+15,Tone Dahle,13
+16,Øyvind Haugland,13
+17,John Hvidsten,12
+18,Ola Nyhus,12
+19,Sturle Hånes,12
+20,Eskil Monrad Hagen,11
+21,Guttorm Egge,11
+22,Heidi Tronbøl,11
+23,Håkon Amundsen,11
+24,Jens Petter Homleid,11
+25,Karsten Johansen,11
+26,Oddvar Kloster,11
+27,Roy Kristiansen,11
+28,Walter Johnsen,11
+29,Gunnar Tjøm,10
+30,Jan Kåre Johnsen,10
+31,Jon Arne Trollvik,10
+32,Lars Onstad,10
+33,Mari Mehlen,10
+34,Ole Vignes,10
+35,Paal Christiansen,10
+36,Roger Mostue,10
+37,Rolf Skotheim,10
+38,Terje Sundberg,10
+39,Tom Stensaker,10
+40,Arild Jansen,9
+41,Birgit Korvald,9
+42,Jostein Amlien,9
+43,Svein Sjøberg,9
+44,Bjørn Grinde,8
+45,Erik Eriksen,8
+46,Jon Haukeland,8
+47,Kjetil Kjernsmo,8
+48,Nicolai Heileman,8
+49,Nina Holvik,8
+50,Svein Nygård,8
+51,Asbjørn Aarvik,7
+52,Astri Rogstad,7
+53,Bjørn Smith-Simonsen,7
+54,Erling Steen,7
+55,Håkon Sagberg,7
+56,Jo Inge Fjellstad,7
+57,Mariken Homleid,7
+58,Pål Skogedal,7
+59,Stein P Rosenberg,7
+60,Svein Dølven,7
+61,Sverre Didriksen,7
+62,Terje Kronen,7
+63,Tom Bergan,7
+64,Are Eriksen,6
+65,Arne Håkon Jørgensen,6
+66,Asgeir Lium,6
+67,Eirik Næss-Ulseth,6
+68,Emil Dahle,6
+69,Frøy Grøndahl,6
+70,Guro Stokke,6
+71,Harald Iwe,6
+72,Hasse Bergstrøm,6
+73,Helge Jøssing,6
+74,Johan Mattson,6
+75,Kirsti Høgvard,6
+76,Kjetil Watne,6
+77,Kåre Knudsen,6
+78,Mona Holte,6
+79,Morten Berg,6
+80,Ole Steen-Larsen,6
+81,Rune Ødegård,6
+82,Sille Winsnes,6
+83,Stig Bjørløw Dalsøren,6
+84,Ståle Søbye,6
+85,Tord Erik Skyrud,6
+86,Truls Viddal,6
+87,Turid Aaberge,6
+88,Wendy Fjellstad,6
+89,Arne Bunkan,5
+90,Bjørn Christensen,5
+91,Bjørn Håvard Evjen,5
+92,Erik Falk,5
+93,Gro Sandgrind,5
+94,Gunn Camilla Stang,5
+95,Halvdan Berg,5
+96,Helge Smebye,5
+97,Hilde Sandnes,5
+98,Hilde Slørdahl Conradi,5
+99,Ingerid Nermoen,5
+100,Jan Tore Henriksen,5
+101,Jostein Tellnes,5
+102,Kjartan Hauger,5
+103,Kjetil Melvold,5
+104,Kristian Bø,5
+105,Kristian Prydz,5
+106,Peer Stiansen,5
+107,Robert Sørlie,5
+108,Siri Lima,5
+109,Stefan Kernstock,5
+110,Steinar Eastwood,5
+111,Terje Pettersen,5
+112,Therese Johnsen,5
+113,Tore Fagervold,5
+114,Torunn Carlsson,5
+115,Torveig Olsen,5
+116,Undis Ellevog,5
+117,Åse Jonassen,5
+118,Ane Funderud,4
+119,Arne Kristensen,4
+120,Cecilie Wærp Hauge,4
+121,Christian Reusch,4
+122,Eli Strande,4
+123,Elin Bergseng,4
+124,Emilie Asplin,4
+125,Erling Friedmann,4
+126,Geir Vatne,4
+127,Jon Albretsen,4
+128,Kjell Winther,4
+129,Knut Hagen,4
+130,Kristin Goa,4
+131,Kristin Tandberg,4
+132,Lars Aurebekk,4
+133,Marit Inngjerdingen,4
+134,Ole Magnus Filseth,4
+135,Rune Flatby,4
+136,Sidsel Graff-Iversen,4
+137,Signe Flood Kjeldsen,4
+138,Terje Didriksen,4
+139,Tone Sjåheim,4
+140,Tove Hoelsveen,4
+141,Trond Ellingsen,4
+142,Åge Larsen,4
+143,Øystein Sjaastad,4
+144,Øyvind Grandum,4
+145,Alexandra Devik,3
+146,Ann-Karin Lesteberg,3
+147,Anne Tandberg,3
+148,Aron Jonassen,3
+149,Audrun Utskarpen,3
+150,Berit Nicolaysen,3
+151,Bredo Erichsen,3
+152,Cato Molthe,3
+153,Egil Dragsund,3
+154,Eirik Nordhagen,3
+155,Elisabeth Rømcke,3
+156,Erik Rambøl,3
+157,Eszter Horvati,3
+158,Fredrik Theisen,3
+159,Frode Sti,3
+160,Geir Olav Lauritsen,3
+161,Gunnar Nossum,3
+162,Halvor Holvik,3
+163,Hans-Christian Udnæs,3
+164,Hege Torp,3
+165,Heidi Mogstad,3
+166,Ida Hope,3
+167,Ivar Seierstad,3
+168,Jan Inge Hansen,3
+169,Janet Jakobsen,3
+170,Katrine Damgaard,3
+171,Kjetil Christensen,3
+172,Kjetil Flydal,3
+173,Kjetil Molund,3
+174,Knut Haug,3
+175,Kristin Dahle,3
+176,Laila Sundsvalen,3
+177,Lars A Breivik,3
+178,Lene Moe,3
+179,Magnus Barth Gustavsen,3
+180,Odd Undheim,3
+181,Ola Lesteberg,3
+182,Ove Martinsen,3
+183,Petter Antonsen,3
+184,Pia Wikborg,3
+185,Reidar Birkeland,3
+186,Rein Kristian Raaholdt,3
+187,Sigrun Pedersen,3
+188,Silje Sørebø,3
+189,Svein Hauge,3
+190,Sven Erik Rognes,3
+191,Svenja Kernstock,3
+192,Sverre Jonassen,3
+193,Thomas Jakobsen,3
+194,Tore Høyem,3
+195,Tormod Øvergaard,3
+196,Tryggve Storås,3
+197,Turid Bratland,3
+198,Åse Røthing,3
+199,Aleksander Jankov,2
+200,Alf Andersen,2
+201,Anders Bredesen,2
+202,Andreas Benneche,2
+203,Anna Klich,2
+204,Anne Lise Strande,2
+205,Anne Lofthus,2
+206,Anne Marie Bleken,2
+207,Arnfinn Skadsheim,2
+208,Arve Minde,2
+209,Bent Ove Barmoen Rinden,2
+210,Bjørg Wigaard,2
+211,Bjørgulv Høigaard,2
+212,Bjørn Svendsen,2
+213,Bjørnar Gammelsæter,2
+214,Britta Fismen,2
+215,Børre Jacobsen,2
+216,Christine Parnemo,2
+217,Dag Haugland,2
+218,Daniel Blom,2
+219,Daniel Todt,2
+220,Dorothea Schulze,2
+221,Einar Andre Jakobsen,2
+222,Einar Bolin,2
+223,Einar Markhus,2
+224,Eirik Hovland,2
+225,Eirik Tandrevold,2
+226,Eivind Selvig,2
+227,Eivind Tandrevold,2
+228,Eli Haugerud,2
+229,Ella Koren,2
+230,Erik Serck Hansen,2
+231,Erik Stangeland,2
+232,Espen Dag Rydland,2
+233,Espen Paus,2
+234,Esten Koren,2
+235,Finn Erik Aas,2
+236,Finn Fossanger,2
+237,Francisco Velazquez,2
+238,Frode Johansen,2
+239,Geir Bøyum,2
+240,Geir Myklebust,2
+241,Gudmund Lykkjen,2
+242,Gunnar Aagaard,2
+243,Gunnar Pedersen,2
+244,Gustav Martinsen,2
+245,Hanne Maria Vister,2
+246,Hans Trøan,2
+247,Harald Gunderson,2
+248,Harald Sundby,2
+249,Harald Sverdrud-Thygeson,2
+250,Heine Erdal,2
+251,Helge Stenersen,2
+252,Håkon Gaute Kvamme,2
+253,Håkon Olsrud,2
+254,Håkon Sem Thagaard,2
+255,Ida Gunderson,2
+256,Ida Solberg Svenne,2
+257,Inge Øren,2
+258,Ingeborg Bartnes,2
+259,Jan Erik Ypma,2
+260,Jan Undhjem,2
+261,Jan-Rune Samuelsen,2
+262,Jarle Nygaard,2
+263,Jens Harald Fossheim,2
+264,Joan Løvaas,2
+265,Johan Lenschow,2
+266,John Eivind Presterud,2
+267,Jon Albretsen,2
+268,Jon Ringdal,2
+269,Jostein Raknes,2
+270,Kaja Winsnes Nordhagen,2
+271,Karen Skirbekk,2
+272,Karl R Løvhaug,2
+273,Knut Bjørne-Larsen,2
+274,Knut Karijord,2
+275,Knut Sivertsen,2
+276,Kristin Fleisje,2
+277,Kristin Riisnæs,2
+278,Lars Erlandsen,2
+279,Lars Klintwall,2
+280,Lars Kolsaker,2
+281,Lenny Enström,2
+282,Line Asplin,2
+283,Lisbeth Halvorsen,2
+284,Liv Astrid Langnes,2
+285,Liv Belsby,2
+286,Maia Flood Kjeldsen,2
+287,Mari Brox,2
+288,Mariann Arnesen,2
+289,Marielle Stigum,2
+290,Marit Kahrs,2
+291,Marte Balchen,2
+292,Martin Grotle Soukup,2
+293,Mathias Benjaminsen,2
+294,Mathias Martinsen,2
+295,May Ingela Hope,2
+296,Mona Bugge,2
+297,Niels Chr Nielsen,2
+298,Olaf Gunderson,2
+299,Ole K Sørensen,2
+300,Ove Tolgensbakk,2
+301,Peder Natvig,2
+302,Peder Nustad,2
+303,Per Helge Bø,2
+304,Per Osen,2
+305,Per Øyvind Steffensen,2
+306,Randi Larsen,2
+307,Rolf Bryhn,2
+308,Selma Næss-Ulseth,2
+309,Sigmund Kvam,2
+310,Signe Astrup Arnessen,2
+311,Sindre W. Nordhagen,2
+312,Solveig Pedersen,2
+313,Stian Alexander Grann,2
+314,Stig A Vangsnes,2
+315,Sven Nordby Andersen,2
+316,Sverre Waaler Kaas,2
+317,Terje Lindal,2
+318,Thomas Kruse,2
+319,Tom Henriksen,2
+320,Tom Ø Larsen,2
+321,Tone J Oredalen,2
+322,Tord Fuglen,2
+323,Torgeir Johnsen,2
+324,Torild Jørgensen,2
+325,Torkield Eivindsson,2
+326,Trine Kirkhus,2
+327,Trond N Boge,2
+328,Trond Vatn,2
+329,Trude Berget,2
+330,Trude Fixdal,2
+331,Trude Giverhaug,2
+332,Vidar Jakobsen,2
+333,Øivin Aarnes,2
+334,Øivind Nilsen,2
+335,Øystein Bolin,2
+336,Øyvind Due Trier,2
+337,Øyvind Rasen,2
+338,Øyvind Solli,2
+339,Øyvind Stokseth,2
+340,Øyvind Støren,2
+341,Adam Balfour,1
+342,Aleidis Løken,1
+343,Alexander Bürger,1
+344,Alf Sørland,1
+345,Anders Kirkhus,1
+346,Anders Sægrov,1
+347,Anders Tiltnes,1
+348,Andreas Brunes,1
+349,Andreas Gjone,1
+350,Andreas Gundersen,1
+351,Ane Bjørnsgaard,1
+352,Anikka Zell,1
+353,Anita Langerød,1
+354,Ann-Cathrin Gulbrandsen,1
+355,Ann-Kristin Gjertsen,1
+356,Ann-Kristin Stokke,1
+357,Anna Jensen,1
+358,Anna Lina Toverud,1
+359,Anna Westerlund,1
+360,Anne Berit Eid,1
+361,Anne Berit Jørgensen,1
+362,Anne Breivik,1
+363,Anne C Hygen,1
+364,Anne Danielsen,1
+365,Anne E Ramtvedt,1
+366,Anne Guri Jevne,1
+367,Anne H Jørstad,1
+368,Anne Konring Olesen,1
+369,Anne Kristin Plejdrup,1
+370,Anne Kristine Wadahl,1
+371,Anne Lise Aae,1
+372,Anne Lise Hugdahl,1
+373,Anne Ranheim,1
+374,Anne kristin Knudsen,1
+375,Annette,1
+376,Annie Martine Holmsen,1
+377,Are Wigaard,1
+378,Arlien Engseth,1
+379,Arne Dirdal,1
+380,Arne Fagerlund,1
+381,Arne Hjelle,1
+382,Arne Kolstad,1
+383,Arne Martin Torgersen,1
+384,Arne Opdahl,1
+385,Arnfinn Ingjerd,1
+386,Arnt-Ivar Kverndal,1
+387,Arvid Berge,1
+388,Astrid Carlson,1
+389,Astrid Liavåg,1
+390,Atgeir Takle,1
+391,Atie Saugerud,1
+392,Atle Guttormsen,1
+393,Aud Scheie,1
+394,Audhild Valli,1
+395,Audun Olafsen,1
+396,Audun Wik,1
+397,Axel Theisen,1
+398,Beate Blystad,1
+399,Bendik Sagsveen,1
+400,Benedicte Blix,1
+401,Benedicte Nilsen,1
+402,Bente Landmark,1
+403,Bente Sæther,1
+404,Berit Bøhmer,1
+405,Berit Nermoen,1
+406,Beverly Wahl,1
+407,Birgit Ø Tennøe,1
+408,Bjarne Jansen,1
+409,Bjarne Kjøllemoen,1
+410,Bjarne Nilsen,1
+411,Bjørg Einan,1
+412,Bjørg Simonsen,1
+413,Bjørn Andreas Aaslund,1
+414,Bjørn E Hansen,1
+415,Bjørn Hamre,1
+416,Bjørn Omar Evju,1
+417,Bjørn Sanderlien,1
+418,Bjørn Willadsen,1
+419,Brynjar Fredheim,1
+420,Børge Nyseth,1
+421,Camilla Haugland,1
+422,Carina Bæren,1
+423,Carina Morch,1
+424,Carl Dons,1
+425,Cecilie Hauge,1
+426,Cecilie Skipland,1
+427,Charlotte Haug,1
+428,Christer Bech,1
+429,Christian Gløgård,1
+430,Christian Kull,1
+431,Christian Salavs,1
+432,Christian Vogelsang,1
+433,Christian Wiig Bøen,1
+434,Claus Frimann Clasen,1
+435,Dag Lorås,1
+436,Dag Nylund,1
+437,Dag Olsen,1
+438,Dag Skulbru,1
+439,Dag Steinar Ragvin,1
+440,David Gottfridsson,1
+441,Diana Markus,1
+442,Don Skantze,1
+443,Doris Larsson,1
+444,Egil Nilsen,1
+445,Einar Nygård,1
+446,Eirik Watterdal,1
+447,Eivind Aas,1
+448,Eivind Tonna,1
+449,Eldar Børsum,1
+450,Eldbjørg Moxnes,1
+451,Elin Bjerva,1
+452,Elisabeth Børsheim,1
+453,Elisabeth Mork Fjeldvær,1
+454,Ellen Sofie Olsvik,1
+455,Else Kari Nordli,1
+456,Emma Wallner,1
+457,Endre Hallan,1
+458,Erik A Raabe,1
+459,Erik Bade,1
+460,Erik Barlinn Korvald,1
+461,Erik Eide,1
+462,Erik Hodneland,1
+463,Erik Stordal,1
+464,Erik Sælen,1
+465,Erik Tandberg,1
+466,Erik Vieth Pedersen,1
+467,Erlend Engan,1
+468,Erlend Holtermann,1
+469,Erling Christiansen,1
+470,Erling Hjermstad,1
+471,Erling Schjetne,1
+472,Esben Evensen,1
+473,Espen Christoffersen,1
+474,Espen Gjertsen,1
+475,Espen Holm,1
+476,Espen Prydz,1
+477,Espen Wigaard,1
+478,Eva Dyrhaug,1
+479,Eva Rimstad,1
+480,Even Skårholen,1
+481,Finn Egil Grimnes,1
+482,Finn Gange,1
+483,Finn Rygh,1
+484,Fredrik Delås,1
+485,Frida Næss-Ulseth,1
+486,Fridtjof Reusch,1
+487,Frode Konst,1
+488,Frode Løseth,1
+489,Frode Sandersen,1
+490,Frode Svane,1
+491,Gard Spreemann,1
+492,Gaute W. Hallan Steiwer,1
+493,Geir A Quale,1
+494,Geir Arnesen,1
+495,Geir Grønvold,1
+496,Geir Hoff,1
+497,Geir Moen,1
+498,Geir Orderud,1
+499,Gisle Fagerland,1
+500,Glen Maylath,1
+501,Greg Daniels,1
+502,Grethe Bjørkå,1
+503,Gro Thomter,1
+504,Gudbrand Lien,1
+505,Gunnar Halden,1
+506,Gunnar Haugerud,1
+507,Gunnar Hope,1
+508,Gunnar Romsaas,1
+509,Gunnar Veastad,1
+510,Gunnar Ødegaard,1
+511,Guttorm Høgåsen,1
+512,Hallvard Roskifte,1
+513,Halvard Bjørgum,1
+514,Halvor Hobøl,1
+515,Halvor Lund,1
+516,Hanne Nøvik,1
+517,Hans Berulfsen,1
+518,Hans Engebretsen,1
+519,Hans J Bergum,1
+520,Hans J Hoffgaard,1
+521,Hans Jevanord,1
+522,Hans Morten Haugen,1
+523,Hans O Amblie,1
+524,Hans Rusten,1
+525,Harald Astrup Arnesen,1
+526,Harald Aulie,1
+527,Harald Berg,1
+528,Harald Bergland,1
+529,Harald Eng,1
+530,Harald Rikheim,1
+531,Harald Sangnes,1
+532,Hege Karlsen,1
+533,Helen Røstad,1
+534,Helga Haverstad,1
+535,Helge Bålsrud,1
+536,Helge Johansen,1
+537,Henning Røberg,1
+538,Henrik Eijsink,1
+539,Henrik Enoksen,1
+540,Henrik Reusch,1
+541,Henrik Øvrebø,1
+542,Hilde B Berntsen,1
+543,Hilde Brastad,1
+544,Håkon Kongtorp,1
+545,Håkon Korsvoll,1
+546,Håvard Berg,1
+547,Håvard Bergheim,1
+548,Håvard Botterud,1
+549,Håvard Hågård,1
+550,Håvard Kauserud,1
+551,Håvard Martinsen,1
+552,Håvard Stemshaug,1
+553,Ida Marie Gerhardsen,1
+554,Inge Jordet,1
+555,Inge Vaktskjold,1
+556,Inger Elisabeth Kvaase,1
+557,Inger Lise Erichsrud,1
+558,Ingrid Bøylestad,1
+559,Ingrid Robøle,1
+560,Ingrid Strande,1
+561,Ingrid Tandrevold,1
+562,Ingunn Schei,1
+563,Ingvild Gjessing,1
+564,Ingvild Vikan,1
+565,Ivar A. Seierstad,1
+566,Ivar Mysterud,1
+567,Ivar Opsahl,1
+568,Ivar Pettersen,1
+569,Jacob Dybwad,1
+570,Jan Andreas Edstrøm,1
+571,Jan Erik Grønvold,1
+572,Jan Fredrik Helgaker,1
+573,Jan H Bjørnstad,1
+574,Jan Havlas,1
+575,Jan Ivar Juvik,1
+576,Jan Johnsen,1
+577,Jan Kjetil,1
+578,Jan Kristian Lygre,1
+579,Jan Lendin,1
+580,Jan Martin Ståvi,1
+581,Jan Myhre,1
+582,Jan Rambøl,1
+583,Jan Sinnes,1
+584,Jan Theien,1
+585,Jan Tore Ludvigsen,1
+586,Jan Øyvind Schneider,1
+587,Janna Otrusinova,1
+588,Jenny Andreassen-Moe,1
+589,Jens Henriksen,1
+590,Joar Holme,1
+591,Johan Swedberg,1
+592,Johannes Fougner,1
+593,Johannes Hov,1
+594,John Bjørnar Bremnes,1
+595,John Kristiansen,1
+596,Johs. Hjelmstad,1
+597,Jon Anders Græsli,1
+598,Jon Arne Skrove,1
+599,Jon F Undhjem,1
+600,Jon Gunnar Mork,1
+601,Jonas Nordby,1
+602,Jonas Tyssø,1
+603,Jorun Dombu,1
+604,Jorun Vegdal,1
+605,Jostein Bø Fløystad,1
+606,Julie Berteig,1
+607,Julie Bøbel,1
+608,Jørgen Madslien,1
+609,Jørgen Mathias Nipen,1
+610,Jørgen Weidemann,1
+611,Jørn Limi,1
+612,Jørn Møster,1
+613,Kaja Eckhof,1
+614,Kari Kvisselien,1
+615,Kari Rørstad,1
+616,Kari Smeby,1
+617,Karin Berentsen,1
+618,Karine Hertzberg,1
+619,Karl A Claussen,1
+620,Karl Even Rygh,1
+621,Karl J Songedal,1
+622,Karl Røyrhus,1
+623,Karsten Lien,1
+624,Kathinka Aslaksen,1
+625,Kathinka Mohn,1
+626,Katrine Andersen,1
+627,Kent Roger Bjørklund,1
+628,Kersti Kerner,1
+629,Kerstin Kinkelin,1
+630,Kerstin Schier,1
+631,Ketil Berge,1
+632,Kirsti Solem,1
+633,Kjell Blomseth,1
+634,Kjell Hauen Eriksen,1
+635,Kjersti Berre,1
+636,Kjersti Tho,1
+637,Kjetil A Skudal,1
+638,Kjetil Dahl,1
+639,Kjetil Hansen,1
+640,Kleng Bråtveit,1
+641,Knut Aasheim,1
+642,Knut Anders Løken,1
+643,Knut Bredesen,1
+644,Knut Einar Volden,1
+645,Knut Erling Øen,1
+646,Knut Grøholt,1
+647,Knut Ivar Vestli,1
+648,Knut Jarle Botterud,1
+649,Knut Kristen Hangeraas,1
+650,Knut Lien,1
+651,Knut Onsager,1
+652,Kristian Asplin,1
+653,Kristian Bosness,1
+654,Kristian Opsahl Bredesen,1
+655,Kristian Ruud,1
+656,Kurt Ove Melby,1
+657,Kåre Kristoffersen,1
+658,Lars Aasebø,1
+659,Lars Aaserud,1
+660,Lars Chr. Aasebø,1
+661,Lars Einar Intelhus,1
+662,Lars Granberg,1
+663,Lars Grande,1
+664,Lars Gustav Rogne,1
+665,Lars Hjermstad,1
+666,Lars Krüger,1
+667,Lars Njaastad,1
+668,Lars Njåstad,1
+669,Lars Sønstebø,1
+670,Lars Thoresen,1
+671,Lars-Christian Unger,1
+672,Lasse Arnesen,1
+673,Leif J Bogetveit,1
+674,Leif Lødeng,1
+675,Leif Pedersen,1
+676,Leif Åge Åabø,1
+677,Linda Antonsen,1
+678,Line Jenssen,1
+679,Line Langkaas,1
+680,Lisbeth Løvhøiden,1
+681,Liv Susanne Bugge,1
+682,Louise Oram,1
+683,Magen Knudsen,1
+684,Magne Jørgensen,1
+685,Magnus Kristiansen,1
+686,Magnus Ulvestad,1
+687,Malin Eijsink,1
+688,Malin Lundvik,1
+689,Margareth Hansen,1
+690,Margrete Engzelius,1
+691,Margrete Kasbo,1
+692,Margrethe Myhre,1
+693,Margrethe Østbø,1
+694,Maria Persson,1
+695,Marianne Bergflødt,1
+696,Marianne Reusch,1
+697,Marit Josefsen,1
+698,Marit Karlsen,1
+699,Marit Rognlien,1
+700,Marit Solås,1
+701,Marit Sæbu,1
+702,Markus Knapp Kongsberg,1
+703,Marte Lange Vik,1
+704,Marte Skogsrud,1
+705,Martin Berulfsen,1
+706,Martin Kjall-Olsen,1
+707,Martin Pioch,1
+708,Martin Tormodsen,1
+709,Martin Veastad,1
+710,Mathias Martinsen,1
+711,Mathias Nipen,1
+712,Mattias Karlsson,1
+713,May Bente Brurberg,1
+714,May Britt Abrahamsen,1
+715,Mie Eide,1
+716,Mikael Olausson,1
+717,Miri Jørgensen,1
+718,Morten Eilertsen,1
+719,Morten Fismen,1
+720,Morten Hoffmann,1
+721,Morten Kongsberg,1
+722,Morten Wettergren,1
+723,Målfrid Konst,1
+724,Niels Øien,1
+725,Nikolai Korvald Skaare,1
+726,Nils A Ringstad,1
+727,Nils A Risebro,1
+728,Nils Flegstad,1
+729,Nils Gunnar Juel,1
+730,Nils Petter Fremming,1
+731,Nora Ursin,1
+732,Ola Nyhus,1
+733,Ola Brox,1
+734,Ola Buxrud,1
+735,Ola Prestrud,1
+736,Ola Tellesbø,1
+737,Olaf Giverhaug,1
+738,Olav Eide,1
+739,Olav Nipen,1
+740,Olav Risholt,1
+741,Olav Theodorsen,1
+742,Ole Kristian Kristensen,1
+743,Ole Vegard Lundestad,1
+744,Ottar Berg,1
+745,Ottar Nygård,1
+746,Otto Anderson,1
+747,Paal Sand,1
+748,Patrick Krähenbühl,1
+749,Paul Solheim,1
+750,Peder Ydalus,1
+751,Peer Stiansen,1
+752,Per Aagaard,1
+753,Per Arne Røstasand,1
+754,Per Bjørnrud,1
+755,Per Christensen,1
+756,Per Henning Bjerva,1
+757,Per Israelson,1
+758,Per Israelsson,1
+759,Per Jacobsen,1
+760,Per Jorås,1
+761,Per Kåre Limmestand,1
+762,Per Ongstad,1
+763,Per Øhlckers,1
+764,Per Øhlkers,1
+765,Per Øivind Eger,1
+766,Pernille,1
+767,Petter Astrup Arnesen,1
+768,Petter Saltnæs,1
+769,Petter Sveen Nilsen,1
+770,Pål Jevanord,1
+771,Pål Næsje,1
+772,Pål Winsents,1
+773,Ragnar Ekker,1
+774,Ragnar Tonjer,1
+775,Ragnhild Bråthen,1
+776,Ragnhild Skogsrud,1
+777,Ragnhild Utstumo,1
+778,Ragnvald Sannes,1
+779,Ram Rayamajhi,1
+780,Randi Abelsen,1
+781,Randi Schrøder,1
+782,Rannveig Bø Fløystad,1
+783,Rannveig W. Nordhagen,1
+784,Rasmus Korvald Skaare,1
+785,Rasmus Sulebak,1
+786,Reidar Otter,1
+787,Richard Zeiner-Gundersen,1
+788,Roar Gammelsæter,1
+789,Robert Bering,1
+790,Robert Enevoldsen,1
+791,Robert Parkegren,1
+792,Robert Pehrson,1
+793,Roger Losvik,1
+794,Roland Hürlimann,1
+795,Ronny Høgvold,1
+796,Roy Hanssen,1
+797,Rudi Bergflødt Olsen,1
+798,Runar Dalholt,1
+799,Rune B Johansen,1
+800,Rune Byrkjeland,1
+801,Rune Halke,1
+802,Råg Ranes,1
+803,Samantha Houghton,1
+804,Sigrid Grepstad,1
+805,Sigrid Lykkjen,1
+806,Sigurd Hertzberg,1
+807,Sigurd Liavåg,1
+808,Sigurd Nygård,1
+809,Sigve Vågsnes,1
+810,Silje Rafaelsen,1
+811,Sindre Friedstad,1
+812,Sindre Rønning,1
+813,Sindre Østhagen,1
+814,Siri Eidet,1
+815,Sissel Jerkø,1
+816,Siv Hilde Houmb,1
+817,Siv Lerøy,1
+818,Snorre Kverndokk,1
+819,Solveig Sveen,1
+820,Steffen Brandstad,1
+821,Steffen Kystad,1
+822,Stein Blomseth,1
+823,Stein Næsje,1
+824,Stein Roar Hopen,1
+825,Stein Veastad,1
+826,Steinar Lande,1
+827,Steinar Låg,1
+828,Steinar Rideng,1
+829,Steinar Øvreås,1
+830,Stian Lund,1
+831,Stian Wendelborg,1
+832,Stig Fakstad,1
+833,Stig Sandberg,1
+834,Stina Sandberg,1
+835,Stine Karen Bjøringsøy,1
+836,Ståle Grøthe,1
+837,Svein Bø,1
+838,Sven Tonjer,1
+839,Sven-Erik Kristiansen,1
+840,Sverre Jonassen,1
+841,Tarjei Vollset,1
+842,Tea Skogsrud,1
+843,Teodor Sveen Nilsen,1
+844,Terje Christoffersen,1
+845,Terje Dengerud,1
+846,Terje Skjeggedal,1
+847,Terje Smevold,1
+848,Thalia Bertschinger,1
+849,Thomas Bedin,1
+850,Thomas Nipen,1
+851,Thor Benjaminsen,1
+852,Thor Mella,1
+853,Thor Rudsbråten,1
+854,Tom A Karlsen,1
+855,Tom A Torstensen,1
+856,Tone Nerdrum,1
+857,Tor Lea,1
+858,Tor Olav Heggem,1
+859,Tor Olav Hystad,1
+860,Tor Ringstad,1
+861,Torbjørn Holt,1
+862,Torbjørn Kulstad,1
+863,Tore Berge,1
+864,Tore Bredalen,1
+865,Tore Køste,1
+866,Tore Ljunggren,1
+867,Tore Ruud,1
+868,Tore Røraas,1
+869,Tore Sannes,1
+870,Tore Stubbe,1
+871,Torgeir Strandhagen,1
+872,Torgeir Wada,1
+873,Torgeir Watne,1
+874,Torgrim Engell,1
+875,Toril Bergflødt Olsen,1
+876,Torill B Olsen,1
+877,Torkel Hestsveen,1
+878,Torkel Irgens,1
+879,Torkel Thoresen,1
+880,Tormod Øvergaard,1
+881,Torstein Kvaale,1
+882,Torstein Ribe,1
+883,Torstein Wang,1
+884,Tov Arne Bondal,1
+885,Tove Jørstad,1
+886,Tove Pedersen,1
+887,Tove Strand,1
+888,Trine Melheim,1
+889,Trine Oldernes,1
+890,Trond Cato Martinsen,1
+891,Trond Flegstad,1
+892,Trond Hetland,1
+893,Trond Lund,1
+894,Truls Kvaase,1
+895,Trygve Aspelien,1
+896,Tuva Wyller,1
+897,Uiloq Heilmann,1
+898,Ulrik Astrup Arnesen,1
+899,Una G Janson,1
+900,Uno Hanslien,1
+901,Vegard Line,1
+902,Vegard Nilsen,1
+903,Vetle Christiansen,1
+904,Vibeke Landås,1
+905,Vidar Berteig,1
+906,Vidar Solberg,1
+907,Vigdis Løvø,1
+908,Vincent Eijsink,1
+909,Yngvar Christiansen,1
+910,Yves Werling,1
+911,Åse Belsby,1
+912,Åse Margrethe Sogstad,1
+913,Åse Strømme,1
+914,Åsne Skram Trømborg,1
+915,Åsulv Stormoen,1
+916,Øistein Jæger,1
+917,Øivind Fægerstad,1
+918,Øystein Grande,1
+919,Øystein Lia,1
+920,Øystein Olsrud,1
+921,Øystein Pjaaka,1
+922,Øystein Slettmark,1
+923,Øystein Sørensen,1
+924,Øyvind Gylver,1
+925,Øyvind Hjermstad,1
+926,Øyvind Rohn,1
+,Totalt antall deltakelser:,2148
