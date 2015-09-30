@@ -29,3 +29,10 @@ int<sub>z</sub>|How many participations in total|n|y
 Navn|static|y|y
 Deltakelser|static|y|y
 Totalt antall deltakelser|static|y|y
+
+
+## TODO
+
+* Kunne bla blant foreslåtte navn når man har forsøkt å registrere et navn
+* Eksportere rett til HTML-tabell
+* Importere IOF XML-resultatliste
