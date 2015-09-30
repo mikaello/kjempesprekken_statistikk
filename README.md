@@ -6,7 +6,7 @@ Bruker biblioteket opencsv, dette finner du her: http://opencsv.sourceforge.net/
 
 Lagre openCSV i samme mappe som kjempesprekken_statistkk og pakk ut jar fila (jar xf opencsv-x.x.Jar), kompiler og kjør deretter Kjempesprekken.java på vanlig måte.
 
-CSV-fila må være kommaseparert, og med følgende innhold:
+CSV-fila må være semikolonseparert, og med følgende innhold:
 
 
 empty|Navn|Deltakelser
