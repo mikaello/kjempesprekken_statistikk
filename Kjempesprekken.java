@@ -197,7 +197,7 @@ class Overview {
 			   "(just write the name and ENTER, no special command)");
 	System.out.printf("To undo last add:              %s\n", UNDO);
 	System.out.printf("To list all names:             %s\n", LIST_ALL);
-	System.out.printf("To list all names with prefix: %s <name>", LIST_PREFIX);
+	System.out.printf("To list all names with prefix: %s <name>\n", LIST_PREFIX);
 	System.out.printf("To print this list:            %s\n", LIST_COMMANDS);
         System.out.printf("To quit and save:              %s\n", EXIT_SAVE);
         System.out.printf("To quit and not save:          %s\n", EXIT_DISCARD);
