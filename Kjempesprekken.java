@@ -137,14 +137,13 @@ class Overview {
     }
 
     public void shell() {
-        String lastNameProvided = "";
         Scanner scan = new Scanner(System.in);
 	boolean queryUser = true;
 
 	printCommands();
         do {
             System.out.print("Name: " );
-            lastNameProvided = scan.nextLine().trim();
+            String lastNameProvided = scan.nextLine().trim();
 
 	    if (lastNameProvided.length() == 0) {
 		continue;
@@ -171,6 +170,11 @@ class Overview {
         } while(queryUser);
     }
 
+    /**
+     * Takes the correct action according to the given command.
+     *
+     * @return true if the job is done and is ready for a new command
+     */
     private boolean handleCommand(String command) {
             if (command.equalsIgnoreCase(EXIT_SAVE)) {
                 System.out.println();
@@ -183,7 +187,7 @@ class Overview {
 	    } else if (command.equalsIgnoreCase(LIST_ALL)) {
 		listAllNames();
 	    } else if (command.equalsIgnoreCase(LIST_PREFIX)) {
-
+		// TODO
 	    } else if (command.equalsIgnoreCase(LIST_COMMANDS)) {
 		printCommands();
 	    }
