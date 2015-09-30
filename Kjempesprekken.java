@@ -48,13 +48,21 @@ class Overview {
 
     private static final String UNDO = "!undo";
     private static final String LIST_ALL = "!list";
-    private static final String LIST_PREFIX = "!list";
+    private static final String LIST_PREFIX = "!listpre";
+    private static final String LIST_SUFFIX = "!listsuf";
     private static final String LIST_COMMANDS = "!help";
     private static final String EXIT_SAVE = "!exit";
     private static final String EXIT_DISCARD = "!exit hard";
 
     private int thirdFooterColumn;
+
+    /** Set that contains all competitors along with count */
     private Set<Competitor> competitors = new TreeSet<Competitor>();
+
+    /**
+     * Names added this session, these are doubled stored (also in "competitors").
+     * This stack is the history for this session, e.g. used when undoing.
+     */
     private Stack<Competitor> namesAdded = new Stack<Competitor>();
 
     /**
@@ -187,7 +195,9 @@ class Overview {
 	    } else if (command.equalsIgnoreCase(LIST_ALL)) {
 		listAllNames();
 	    } else if (command.equalsIgnoreCase(LIST_PREFIX)) {
-		// TODO
+		listAllNamesWithPrefix(command.replaceFirst(LIST_PREFIX, "").trim());
+	    } else if (command.equalsIgnoreCase(LIST_SUFFIX)) {
+		listAllNamesWithSuffix(command.replaceFirst(LIST_SUFFIX, "").trim());
 	    } else if (command.equalsIgnoreCase(LIST_COMMANDS)) {
 		printCommands();
 	    }
@@ -324,6 +334,33 @@ class Overview {
     }
 
     /**
+     * List all competitors that starts with a specified string
+     */
+    public void listAllNamesWithPrefix(String prefix) {
+	prefix = prefix.toLowerCase();
+
+	for (Competitor c : competitors) {
+	    if (c.getName().toLowerCase().startsWith(prefix)) {
+		System.out.println(c);
+	    }
+	}
+    }
+
+    /**
+     * List all competitors that ends with a specified string
+     */
+    public void listAllNamesWithSuffix(String suffix) {
+	suffix = suffix.toLowerCase();
+
+	for (Competitor c : competitors) {
+	    if (c.getName().toLowerCase().endsWith(suffix)) {
+		System.out.println(c);
+	    }
+	}
+    }
+
+
+    /**
      * Wrapper for Competitor.getCopyWithIncreasedCount(). Necessary
      * for the TreeSet to be sorted.
      * @param c the competitor for which the count should be increased
@@ -331,7 +368,7 @@ class Overview {
      */
     public int increaseCompetitorCount(Competitor c) {
 	    competitors.remove(c);
-	    Competitor increased = getCopyWithIncreasedCount(c);
+	    Competitor increased = c.getCopyWithIncreasedCount();
 	    competitors.add(increased);
 
 	    return increased.getCount();
@@ -345,7 +382,7 @@ class Overview {
      */
     public int decreaseCompetitorCount(Competitor c) {
 	    competitors.remove(c);
-	    Competitor decreased = getCopyWithDecreasedCount(c);
+	    Competitor decreased = c.getCopyWithDecreasedCount();
 	    competitors.add(decreased);
 
 	    return decreased.getCount();
@@ -375,15 +412,15 @@ class Competitor implements Comparable<Competitor> {
 	this.count = c.count;
     }
 
-    public Competitor getCopyWithIncreasedCount(Competitor c) {
-	Competitor competitorWithOnePlus = new Competitor(c);
+    public Competitor getCopyWithIncreasedCount() {
+	Competitor competitorWithOnePlus = new Competitor(this);
 	competitorWithOnePlus.increaseCount();
 
 	return competitorWithOnePlus;
     }
 
-    public Competitor getCopyWithDecreasedCount(Competitor c) {
-	Competitor competitorWithOneMinus = new Competitor(c);
+    public Competitor getCopyWithDecreasedCount() {
+	Competitor competitorWithOneMinus = new Competitor(this);
 	competitorWithOneMinus.decreaseCount();
 
 	return competitorWithOneMinus;
