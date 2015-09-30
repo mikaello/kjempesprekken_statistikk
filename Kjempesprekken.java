@@ -44,7 +44,7 @@ class Overview {
     public final static String thirdHeaderColumn = "Deltakelser";
     public final static String firstFooterColumn = "";
     public final static String secondFooterColumn = "Totalt antall deltakelser:";
-    public final static char separator = ',';
+    public final static char SEPARATOR = ';';
 
     private static final String UNDO = "!undo";
     private static final String LIST_ALL = "!list";
@@ -72,17 +72,17 @@ class Overview {
      * @param filename name of the CSV-file to be read
      */
     public void readCompetitors(String filename) throws Exception {
-        CSVReader reader = new CSVReader(new FileReader(filename), separator);
+        CSVReader reader = new CSVReader(new FileReader(filename), SEPARATOR);
 
         List<String[]> myEntries = reader.readAll();
 
-	if (myEntries.isEmpty()) {
-	    System.err.println("ERROR: No entries is found, check file");
-	    System.exit(1);
-	} else if (myEntries.get(0).length == 1) {
-	    System.err.println("ERROR: Only one element per line, check separator (use " + separator + ")");
-	    System.exit(1);
-	}
+        if (myEntries.isEmpty()) {
+            System.err.println("ERROR: No entries is found, check file");
+            System.exit(1);
+        } else if (myEntries.get(0).length == 1) {
+            System.err.println("ERROR: Only one element per line, check separator (use " + SEPARATOR + ")");
+            System.exit(1);
+        }
 
         for (String[] s : myEntries) {
             if (s[0].equalsIgnoreCase(firstHeaderColumn) &&
@@ -115,16 +115,16 @@ class Overview {
      * @param filename name of the CSV-file that is made
      */
     public void printCompetitors(String filename) throws Exception {
-        CSVWriter writer = new CSVWriter(new FileWriter(filename), ';');
+        CSVWriter writer = new CSVWriter(new FileWriter(filename), SEPARATOR);
 
         // Add header
         writer.writeNext(new String[]{firstHeaderColumn, secondHeaderColumn, thirdHeaderColumn});
 
         int currentCount = 1;
         for (Competitor c : competitors) {
-	    if (c.getCount() < 1) {
-		continue;
-	    }
+            if (c.getCount() < 1) {
+                continue;
+            }
 
             // Get right position number of the competitor
             String[] cur = c.toStringArray();
@@ -146,34 +146,34 @@ class Overview {
 
     public void shell() {
         Scanner scan = new Scanner(System.in);
-	boolean queryUser = true;
+        boolean queryUser = true;
 
-	printCommands();
+        printCommands();
         do {
             System.out.print("Name: " );
             String lastNameProvided = scan.nextLine().trim();
 
-	    if (lastNameProvided.length() == 0) {
-		continue;
-	    } else if (lastNameProvided.charAt(0) == '!') {
-		queryUser = handleCommand(lastNameProvided);
+            if (lastNameProvided.length() == 0) {
+                continue;
+            } else if (lastNameProvided.charAt(0) == '!') {
+                queryUser = handleCommand(lastNameProvided);
             } else {
-		if ((lastNameProvided.split("\\s").length == 1)) {
-		    System.out.print("Name consisting of only one word, is it correct [y/n]: ");
-		    String answer = scan.nextLine();
+                if ((lastNameProvided.split("\\s").length == 1)) {
+                    System.out.print("Name consisting of only one word, is it correct [y/n]: ");
+                    String answer = scan.nextLine();
 
-		    if (answer.charAt(0) == 'n') {
-			continue;
-		    }
-		}
+                    if (answer.charAt(0) == 'n') {
+                        continue;
+                    }
+                }
 
                 Competitor added = addNewName(lastNameProvided);
-		if (added == null) {
-		    continue;
-		} else {
-		    namesAdded.push(added);
-		    System.out.println(added + "\n");
-		}
+                if (added == null) {
+                    continue;
+                } else {
+                    namesAdded.push(added);
+                    System.out.println(added + "\n");
+                }
             }
         } while(queryUser);
     }
@@ -184,63 +184,66 @@ class Overview {
      * @return true if the job is done and is ready for a new command
      */
     private boolean handleCommand(String command) {
-            if (command.equalsIgnoreCase(EXIT_SAVE)) {
-                System.out.println();
-                return false;
-	    } else if (command.equalsIgnoreCase(EXIT_DISCARD)) {
-		// Exit without saving
-		System.exit(0);
-            } else if (command.equalsIgnoreCase(UNDO)) {
-		undoLastAdd();
-	    } else if (command.equalsIgnoreCase(LIST_ALL)) {
-		listAllNames();
-	    } else if (command.equalsIgnoreCase(LIST_PREFIX)) {
-		listAllNamesWithPrefix(command.replaceFirst(LIST_PREFIX, "").trim());
-	    } else if (command.equalsIgnoreCase(LIST_SUFFIX)) {
-		listAllNamesWithSuffix(command.replaceFirst(LIST_SUFFIX, "").trim());
-	    } else if (command.equalsIgnoreCase(LIST_COMMANDS)) {
-		printCommands();
-	    }
+        if (command.equalsIgnoreCase(EXIT_SAVE)) {
+            System.out.println();
+            return false;
+        } else if (command.equalsIgnoreCase(EXIT_DISCARD)) {
+            // Exit without saving
+            System.exit(0);
+        } else if (command.equalsIgnoreCase(UNDO)) {
+            undoLastAdd();
+        } else if (command.equalsIgnoreCase(LIST_ALL)) {
+            listAllNames();
+        } else if (command.toLowerCase().startsWith(LIST_PREFIX + " ")) {
+            listAllNamesWithPrefix(command.replaceFirst(LIST_PREFIX, "").trim());
+        } else if (command.toLowerCase().startsWith(LIST_SUFFIX + " ")) {
+            listAllNamesWithSuffix(command.replaceFirst(LIST_SUFFIX, "").trim());
+        } else if (command.equalsIgnoreCase(LIST_COMMANDS)) {
+            printCommands();
+        } else {
+	    System.err.println("Unknown command: " + command);
+	}
 
-	    return true;
+        return true;
     }
 
     private void printCommands() {
         System.out.println("\n\nPossible commands:");
         System.out.println("To add new name:               <name>      " +
-			   "(just write the name and ENTER, no special command)");
-	System.out.printf("To undo last add:              %s\n", UNDO);
-	System.out.printf("To list all names:             %s\n", LIST_ALL);
-	System.out.printf("To list all names with prefix: %s <name>\n", LIST_PREFIX);
-	System.out.printf("To print this list:            %s\n", LIST_COMMANDS);
+                           "(just write the name and ENTER, no special command)");
+        System.out.printf("To undo last add:              %s\n", UNDO);
+        System.out.printf("To list all names:             %s\n", LIST_ALL);
+        System.out.printf("To list all names with prefix: %s <name>\n", LIST_PREFIX);
+        System.out.printf("To list all names with suffix: %s <name>\n", LIST_SUFFIX);
+        System.out.printf("To print this list:            %s\n", LIST_COMMANDS);
         System.out.printf("To quit and save:              %s\n", EXIT_SAVE);
         System.out.printf("To quit and not save:          %s\n", EXIT_DISCARD);
         System.out.println();
     }
 
     public boolean undoLastAdd() {
-	if (namesAdded.isEmpty()) {
-	    System.err.println("Nothing to undo\n");
-	    return false;
-	}
+        if (namesAdded.isEmpty()) {
+            System.err.println("Nothing to undo\n");
+            return false;
+        }
 
-	Competitor lastAdded = namesAdded.pop();
-	int currentCount = decreaseCompetitorCount(lastAdded);
+        Competitor lastAdded = namesAdded.pop();
+        int currentCount = decreaseCompetitorCount(lastAdded);
 
-	if (currentCount < 0) {
-	    System.err.printf("Something went wrong, '%s' has a negative participation count: %d\n\n",
-			      lastAdded.getName(), currentCount);
-	    return false;
-	} else if (currentCount == 0) {
-	    // Remove newly added competitors when doing an 'undo'
-	    competitors.remove(lastAdded);
-	    System.out.printf("The competitor '%s' is removed from the list\n\n", lastAdded.getName());
-	} else {
-	    System.out.printf("The last added participation of '%s' is removed, current stat is now:\n",
-			      lastAdded.getName());
-	    System.out.println(lastAdded + "\n");
-	}
-	return true;
+        if (currentCount < 0) {
+            System.err.printf("Something went wrong, '%s' has a negative participation count: %d\n\n",
+                              lastAdded.getName(), currentCount);
+            return false;
+        } else if (currentCount == 0) {
+            // Remove newly added competitors when doing an 'undo'
+            competitors.remove(lastAdded);
+            System.out.printf("The competitor '%s' is removed from the list\n\n", lastAdded.getName());
+        } else {
+            System.out.printf("The last added participation of '%s' is removed, current stat is now:\n",
+                              lastAdded.getName());
+            System.out.println(lastAdded + "\n");
+        }
+        return true;
     }
 
     /**
@@ -252,13 +255,13 @@ class Overview {
         Competitor c = getCompetitor(name);
 
         if (c != null) {
-	    // Necessary to remove-update-add to make the TreeSet sorted
-	    increaseCompetitorCount(c);
+            // Necessary to remove-update-add to make the TreeSet sorted
+            increaseCompetitorCount(c);
         } else {
             List<Competitor> l = getSimilarCompetitor(name);
 
             if (l.size() != 0) {
-		// Check for similar competitors, and let user decide
+                // Check for similar competitors, and let user decide
                 Scanner scan = new Scanner(System.in);
 
                 System.out.println("Could not find " + name + ", but found similar: ");
@@ -267,19 +270,19 @@ class Overview {
                     System.out.println(com);
                 }
 
-		System.out.println("\nIs any of these the correct? y / n: ");
-		if (scan.nextLine().equalsIgnoreCase("y")) {
-		    // Return null, and let user type new name
-		    System.out.println("Please type the correct name to register this person");
-		    return null;
-		}
+                System.out.println("\nIs any of these the correct? y / n: ");
+                if (scan.nextLine().equalsIgnoreCase("y")) {
+                    // Return null, and let user type new name
+                    System.out.println("Please type the correct name to register this person");
+                    return null;
+                }
             }
 
             c = new Competitor(name);
             competitors.add(c);
         }
 
-	thirdFooterColumn++; // Total number of participations
+        thirdFooterColumn++; // Total number of participations
         return c;
     }
 
@@ -306,7 +309,7 @@ class Overview {
     public List<Competitor> getSimilarCompetitor(String name) {
         String[] names = name.toLowerCase().split("([-]|\\s)+");
 
-	List<Competitor> competitorList = new ArrayList<Competitor>();
+        List<Competitor> competitorList = new ArrayList<Competitor>();
 
         for (Competitor c : competitors) {
             String cName = c.getName().toLowerCase();
@@ -327,36 +330,36 @@ class Overview {
      * List all competitors along with their participation count
      */
     public void listAllNames() {
-	for (Competitor c : competitors) {
-	    System.out.println(c);
-	}
-	System.out.println();
+        for (Competitor c : competitors) {
+            System.out.println(c);
+        }
+        System.out.println();
     }
 
     /**
      * List all competitors that starts with a specified string
      */
     public void listAllNamesWithPrefix(String prefix) {
-	prefix = prefix.toLowerCase();
+        prefix = prefix.toLowerCase();
 
-	for (Competitor c : competitors) {
-	    if (c.getName().toLowerCase().startsWith(prefix)) {
-		System.out.println(c);
-	    }
-	}
+        for (Competitor c : competitors) {
+            if (c.getName().toLowerCase().startsWith(prefix)) {
+                System.out.println(c);
+            }
+        }
     }
 
     /**
      * List all competitors that ends with a specified string
      */
     public void listAllNamesWithSuffix(String suffix) {
-	suffix = suffix.toLowerCase();
+        suffix = suffix.toLowerCase();
 
-	for (Competitor c : competitors) {
-	    if (c.getName().toLowerCase().endsWith(suffix)) {
-		System.out.println(c);
-	    }
-	}
+        for (Competitor c : competitors) {
+            if (c.getName().toLowerCase().endsWith(suffix)) {
+                System.out.println(c);
+            }
+        }
     }
 
 
@@ -367,11 +370,11 @@ class Overview {
      * @return current count
      */
     public int increaseCompetitorCount(Competitor c) {
-	    competitors.remove(c);
-	    Competitor increased = c.getCopyWithIncreasedCount();
-	    competitors.add(increased);
+        competitors.remove(c);
+        Competitor increased = c.getCopyWithIncreasedCount();
+        competitors.add(increased);
 
-	    return increased.getCount();
+        return increased.getCount();
     }
 
     /**
@@ -381,11 +384,11 @@ class Overview {
      * @return current count
      */
     public int decreaseCompetitorCount(Competitor c) {
-	    competitors.remove(c);
-	    Competitor decreased = c.getCopyWithDecreasedCount();
-	    competitors.add(decreased);
+        competitors.remove(c);
+        Competitor decreased = c.getCopyWithDecreasedCount();
+        competitors.add(decreased);
 
-	    return decreased.getCount();
+        return decreased.getCount();
     }
 
 }
@@ -408,22 +411,22 @@ class Competitor implements Comparable<Competitor> {
     }
 
     Competitor(Competitor c) {
-	this.name = c.name;
-	this.count = c.count;
+        this.name = c.name;
+        this.count = c.count;
     }
 
     public Competitor getCopyWithIncreasedCount() {
-	Competitor competitorWithOnePlus = new Competitor(this);
-	competitorWithOnePlus.increaseCount();
+        Competitor competitorWithOnePlus = new Competitor(this);
+        competitorWithOnePlus.increaseCount();
 
-	return competitorWithOnePlus;
+        return competitorWithOnePlus;
     }
 
     public Competitor getCopyWithDecreasedCount() {
-	Competitor competitorWithOneMinus = new Competitor(this);
-	competitorWithOneMinus.decreaseCount();
+        Competitor competitorWithOneMinus = new Competitor(this);
+        competitorWithOneMinus.decreaseCount();
 
-	return competitorWithOneMinus;
+        return competitorWithOneMinus;
     }
 
 
@@ -446,7 +449,7 @@ class Competitor implements Comparable<Competitor> {
         if (other instanceof Competitor) {
             Competitor that = (Competitor) other;
             result = (this.getName().equals(that.getName()) &&
-		      this.getCount() == that.getCount());
+                      this.getCount() == that.getCount());
         }
         return result;
     }
