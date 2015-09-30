@@ -242,9 +242,8 @@ class Overview {
         Competitor c = getCompetitor(name);
 
         if (c != null) {
-	    // Have to remove-update-add to make the TreeSet sorted
+	    // Necessary to remove-update-add to make the TreeSet sorted
 	    increaseCompetitorCount(c);
-
         } else {
             List<Competitor> l = getSimilarCompetitor(name);
 
@@ -261,6 +260,7 @@ class Overview {
 		System.out.println("\nIs any of these the correct? y / n: ");
 		if (scan.nextLine().equalsIgnoreCase("y")) {
 		    // Return null, and let user type new name
+		    System.out.println("Please type the correct name to register this person");
 		    return null;
 		}
             }
@@ -290,8 +290,8 @@ class Overview {
     }
 
     /**
-     * Returns competitors in the TreeSet containing all the
-     * competitors, that partially matches the given name.
+     * Return competitors in the TreeSet containing all the
+     * competitors that partially matches the given name.
      */
     public List<Competitor> getSimilarCompetitor(String name) {
         String[] names = name.toLowerCase().split("([-]|\\s)+");
@@ -314,7 +314,7 @@ class Overview {
     }
 
     /**
-     * List all competitors with participation count
+     * List all competitors along with their participation count
      */
     public void listAllNames() {
 	for (Competitor c : competitors) {
@@ -324,29 +324,31 @@ class Overview {
     }
 
     /**
-     * Wrapper for Competitor.increaseCount(). Necessary for the TreeSet to be sorted.
+     * Wrapper for Competitor.getCopyWithIncreasedCount(). Necessary
+     * for the TreeSet to be sorted.
      * @param c the competitor for which the count should be increased
      * @return current count
      */
     public int increaseCompetitorCount(Competitor c) {
 	    competitors.remove(c);
-            int currentCount = c.increaseCount();
-	    competitors.add(c);
+	    Competitor increased = getCopyWithIncreasedCount(c);
+	    competitors.add(increased);
 
-	    return currentCount;
+	    return increased.getCount();
     }
 
     /**
-     * Wrapper for Competitor.decreaseCount(). Necessary for the TreeSet to be sorted.
+     * Wrapper for Competitor.getCopyWithDecreasedCount(). Necessary
+     * for the TreeSet to be sorted.
      * @param c the competitor for which the count should be decreased
      * @return current count
      */
     public int decreaseCompetitorCount(Competitor c) {
 	    competitors.remove(c);
-            int currentCount = c.decreaseCount();
-	    competitors.add(c);
+	    Competitor decreased = getCopyWithDecreasedCount(c);
+	    competitors.add(decreased);
 
-	    return currentCount;
+	    return decreased.getCount();
     }
 
 }
@@ -368,14 +370,30 @@ class Competitor implements Comparable<Competitor> {
         this.count = count;
     }
 
+    Competitor(Competitor c) {
+	this.name = c.name;
+	this.count = c.count;
+    }
+
+    public Competitor getCopyWithIncreasedCount(Competitor c) {
+	Competitor competitorWithOnePlus = new Competitor(c);
+	competitorWithOnePlus.increaseCount();
+
+	return competitorWithOnePlus;
+    }
+
+    public Competitor getCopyWithDecreasedCount(Competitor c) {
+	Competitor competitorWithOneMinus = new Competitor(c);
+	competitorWithOneMinus.decreaseCount();
+
+	return competitorWithOneMinus;
+    }
+
+
     public int getCount() { return count; }
     public String getName() { return name; }
-
-    /** Do not call this method directly, use Kjempesprekken.increaseCompetitorCount() */
-    public int increaseCount() { return ++count; }
-
-    /** Do not call this method directly, use Kjempesprekken.decreaseCompetitorCount() */
-    public int decreaseCount() { return --count; }
+    private int increaseCount() { return ++count; }
+    private int decreaseCount() { return --count; }
 
     public int compareTo(Competitor c) {
         int bestCount = c.getCount() - getCount();
@@ -390,7 +408,7 @@ class Competitor implements Comparable<Competitor> {
         boolean result = false;
         if (other instanceof Competitor) {
             Competitor that = (Competitor) other;
-            result = (this.getName() == that.getName() &&
+            result = (this.getName().equals(that.getName()) &&
 		      this.getCount() == that.getCount());
         }
         return result;
@@ -402,7 +420,7 @@ class Competitor implements Comparable<Competitor> {
 
     /**
      * Makes a string array with all the fields of an competitor. When
-     * printing to a CSV-file it is necessary to give a string-array,
+     * printing to a CSV-file it is necessary to provide a string-array,
      * then this method can be used.
      */
     public String[] toStringArray() {
