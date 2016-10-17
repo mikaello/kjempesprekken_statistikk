@@ -9,6 +9,7 @@ Lagre openCSV i samme mappe som kjempesprekken_statistkk og pakk ut jar fila (ja
 CSV-fila må være semikolonseparert, og med følgende innhold:
 
 
+
 empty|Navn|Deltakelser
 -----|--------------------|-----------------
 int<sub>x</sub>|string<sub>x</sub>|int<sub>y</sub>
